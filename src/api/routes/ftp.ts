@@ -7,15 +7,16 @@ const route = Router();
 
 export default (app: Router) => {
   app.use("/ftp", route);
-  route.get("/:filename", downloadFTPFile);
+  route.post("/", downloadFTPFile);
 };
 
 // Get CMS API
 async function downloadFTPFile(req: Request, res: Response) {
   // console.log(req,'req details from ftp')
-  const fileName = req.params.filename;
+  // const fileName = req.params.filename;
+  const data = req.body;
   // console.log(fileName,'filename from ftp')
-  await IFTP.downloadFTPFileInterface(fileName)
+  await IFTP.downloadFTPFileInterface(data)
     .then((response) => {
       console.log(response, "from ftp, response check ");
       if (response) {
@@ -30,20 +31,3 @@ async function downloadFTPFile(req: Request, res: Response) {
       return res.status(500).end();
     });
 }
-
-// async function moveFTPFile(req: Request, res: Response) {
-//   const fileName = req.params.filename;
-//   await IFTP.moveFTPFileInterface(fileName)
-//     .then((response) => {
-//       console.log(response, "from ftp, response check");
-//       if (response) {
-//         console.log(response);
-//         return res.status(200).json(response);
-//       } else {
-//         return res.status(400).json("something went wrong from ftp");
-//       }
-//     })
-//     .catch((e) => {
-//       return res.status(500).end();
-//     });
-// }

@@ -40,13 +40,6 @@ export class FtpAdapter
       console.log("result in adapter", res);
   }
 
-  // async moveFile(currentPath : string, newPath: string): Promise<void>{
-  //   console.log("move file",currentPath, newPath );
-
-  //   const res = 
-  //   console.log('results' , res)
-  // }
-
   async uploadFile(localFilePath: string, remoteFilePath: string): Promise<void>
   {
     await this.client.uploadFrom(localFilePath, remoteFilePath);

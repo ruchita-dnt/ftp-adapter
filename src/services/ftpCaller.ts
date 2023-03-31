@@ -20,13 +20,12 @@ export class ftpCaller
 	}
 
 	// ftp adapter
-	public async ftpCall(fileName: string)
+	public async ftpCall(data: any)
 	{
 		await this.ftpAdapter.connect();
-		console.log("fileName~~~~", fileName);
 		return new Promise(async (resolve, reject) =>
 		{
-			await this.ftpAdapter.downloadFile(`/download/${fileName}`, `C:/Users/DELL/${fileName}` , `/somedata/test/${fileName}` ).then(() =>
+			await this.ftpAdapter.downloadFile(data.ftpServerPath, data.localPath , data.renameFilePath ).then(() =>
 			{
 				resolve(true);
 			}).catch(err =>
@@ -40,15 +39,4 @@ export class ftpCaller
 		// console.log(files);
 		// await this.ftpAdapter.disconnect();
 	}
-	// public async ftpCaller(fileName: string){
-	// 	await this.ftpAdapter.connect();
-	// 	console.log("fileName~~~", fileName);
-	// 	return new Promise(async(resolve, reject)=>{
-	// 		await this.ftpAdapter.moveFile(`/somedata/${fileName}`,`/somedata/test/${fileName}`).then(()=>{
-	// 			resolve(true);
-	// 		}).catch(err=>{
-	// 			reject(err);
-	// 		})
-	// 	});
-	// }
 }
