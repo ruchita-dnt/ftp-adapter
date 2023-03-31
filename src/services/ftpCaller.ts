@@ -4,6 +4,8 @@ import config from '../config';
 // import path from 'path';
 import { Service } from 'typedi';
 import { FtpAdapter } from "./ftpAdapter";
+import { resolve } from 'dns';
+import { rejections } from 'winston';
 
 
 @Service()
@@ -24,7 +26,7 @@ export class ftpCaller
 		console.log("fileName~~~~", fileName);
 		return new Promise(async (resolve, reject) =>
 		{
-			await this.ftpAdapter.downloadFile(`/download/${fileName}`, `/Users/ruchitashah/Downloads/${fileName}`).then(() =>
+			await this.ftpAdapter.downloadFile(`/download/${fileName}`, `C:/Users/DELL/${fileName}` , `/somedata/test/${fileName}` ).then(() =>
 			{
 				resolve(true);
 			}).catch(err =>
@@ -38,4 +40,15 @@ export class ftpCaller
 		// console.log(files);
 		// await this.ftpAdapter.disconnect();
 	}
+	// public async ftpCaller(fileName: string){
+	// 	await this.ftpAdapter.connect();
+	// 	console.log("fileName~~~", fileName);
+	// 	return new Promise(async(resolve, reject)=>{
+	// 		await this.ftpAdapter.moveFile(`/somedata/${fileName}`,`/somedata/test/${fileName}`).then(()=>{
+	// 			resolve(true);
+	// 		}).catch(err=>{
+	// 			reject(err);
+	// 		})
+	// 	});
+	// }
 }

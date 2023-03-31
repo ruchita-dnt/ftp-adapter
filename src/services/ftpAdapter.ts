@@ -22,7 +22,7 @@ export class FtpAdapter
     await this.client.close();
   }
 
-  async downloadFile(remoteFilePath: string, localFilePath: string): Promise<void>
+  async downloadFile(remoteFilePath: string, localFilePath: string, newPath: string): Promise<void>
   {
     console.log("in download file adapter", remoteFilePath, localFilePath);
     
@@ -35,8 +35,17 @@ export class FtpAdapter
       // })
 
       const res = await this.client.downloadTo(localFilePath, remoteFilePath);
+      const rename = await this.client.rename(remoteFilePath, newPath);
+
       console.log("result in adapter", res);
   }
+
+  // async moveFile(currentPath : string, newPath: string): Promise<void>{
+  //   console.log("move file",currentPath, newPath );
+
+  //   const res = 
+  //   console.log('results' , res)
+  // }
 
   async uploadFile(localFilePath: string, remoteFilePath: string): Promise<void>
   {
