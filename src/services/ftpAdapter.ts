@@ -39,7 +39,7 @@ export class FtpAdapter {
 
         await this.client.rename(`${ftpServerPath}${listAllFiles[i].name}`, `${moveDirectoryPath}${listAllFiles[i].name.split('.')[0]}_processed.${extension}`);
       }
-    };
+    }
   }
 
   async uploadFile(localFilePath: string, remoteFilePath: string): Promise<void> {
