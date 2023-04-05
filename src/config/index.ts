@@ -40,18 +40,19 @@ export default {
 		prefix: process.env.COMMON_API,
 	},
 
+	ftpConfig: {
+		host: '192.168.1.43',
+		port: 21,
+		user: 'FTP_user',
+		password: 'hint',
+		secure: false, // Set to true if using FTPS
+		method: "POST"
+	}
 	// ftpConfig: {
-	// 	host: '192.168.1.25',
+	// 	host: 'demo.wftpserver.com',
 	// 	port: 21,
-	// 	user: 'ftp-user',
-	// 	password: 'hint',
+	// 	user: 'demo',
+	// 	password: 'demo',
 	// 	secure: false, // Set to true if using FTPS
 	// }
-	ftpConfig: {
-		host: 'demo.wftpserver.com',
-		port: 21,
-		user: 'demo',
-		password: 'demo',
-		secure: false, // Set to true if using FTPS
-	}
 };

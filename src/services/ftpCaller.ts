@@ -25,7 +25,7 @@ export class ftpCaller
 		await this.ftpAdapter.connect();
 		return new Promise(async (resolve, reject) =>
 		{
-			await this.ftpAdapter.downloadFile(data.ftpServerPath, data.localPath , data.renameFilePath ).then(() =>
+			await this.ftpAdapter.downloadFile(data.ftpServerPath, data.destinationPath , data.moveDirectoryPath, data.fileExtension ).then(() =>
 			{
 				resolve(true);
 			}).catch(err =>
