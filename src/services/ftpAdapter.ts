@@ -37,7 +37,7 @@ export class FtpAdapter {
         
         await this.client.downloadTo(`${destinationPath}${listAllFiles[i].name}`, `${ftpServerPath}${listAllFiles[i].name}`);
 
-        await this.client.rename(`${ftpServerPath}${listAllFiles[i].name}`, `${moveDirectoryPath}${listAllFiles[i].name.split('.')[0]}_processed.${extension}`);
+        // await this.client.rename(`${ftpServerPath}${listAllFiles[i].name}`, `${moveDirectoryPath}${listAllFiles[i].name.split('.')[0]}_processed.${extension}`);
       }
     }
   }

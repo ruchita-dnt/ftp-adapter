@@ -18,38 +18,38 @@ exports.default = {
     /**
      * Prod or development server
      */
-    ENV: process.env.ENV,
-    NAME: process.env.NAME,
-    VERSION: process.env.VERSION,
+    ENV: 'DEV',
+    // NAME: process.env.NAME,
+    // VERSION: process.env.VERSION,
     /**
      * Your favorite port
      */
-    port: parseInt(process.env.API_PORT, 10),
-    api_url: process.env.API_URL,
-    server_url: process.env.SERVER_URL,
-    admin_url: process.env.ADMIN_URL,
+    port: 3000,
+    // api_url: '0.0.0.0',
+    // server_url: process.env.SERVER_URL,
+    // admin_url: process.env.ADMIN_URL,
     // Public path
-    public_path: process.env.PUBLIC_PATH,
+    // public_path: process.env.PUBLIC_PATH,
     /**
      * API configs
      */
     api: {
-        prefix: process.env.COMMON_API,
+        prefix: '/',
     },
-    ftpConfig: {
-        host: '192.168.1.43',
-        port: 21,
-        user: 'FTP_user',
-        password: 'hint',
-        secure: false,
-        method: "POST"
-    }
     // ftpConfig: {
-    // 	host: 'demo.wftpserver.com',
+    // 	host: '192.168.1.43',
     // 	port: 21,
-    // 	user: 'demo',
-    // 	password: 'demo',
+    // 	user: 'FTP_user',
+    // 	password: 'hint',
     // 	secure: false, // Set to true if using FTPS
+    // 	method: "POST"
     // }
+    ftpConfig: {
+        host: 'demo.wftpserver.com',
+        port: 21,
+        user: 'demo',
+        password: 'demo',
+        secure: false, // Set to true if using FTPS
+    }
 };
 //# sourceMappingURL=index.js.map

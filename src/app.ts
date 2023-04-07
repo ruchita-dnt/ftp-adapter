@@ -2,7 +2,7 @@
 import config from './config';
 import express from 'express';
 import 'reflect-metadata';
-import * as path from 'path';
+// import * as path from 'path';
 
 async function startServer() {
 	const app = express();
@@ -14,9 +14,9 @@ async function startServer() {
 	 * So we are using good old require.
 	 **/
 	await require('./loaders').default({ expressApp: app });
-	app.use(express.static(path.join(__dirname, 'public')));
+	// app.use(express.static(path.join(__dirname, 'public')));
 
-	app.listen(config.port, config.api_url, err => {
+	app.listen(config.port, err => {
 		if (err) {
 			console.log(err);
 			process.exit(1);
