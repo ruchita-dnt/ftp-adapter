@@ -41,12 +41,11 @@ export default {
 	},
 
 	// ftpConfig: {
-	// 	host: '192.168.1.43',
+	// 	host: '192.168.1.53',
 	// 	port: 21,
-	// 	user: 'FTP_user',
-	// 	password: 'hint',
-	// 	secure: false, // Set to true if using FTPS
-	// 	method: "POST"
+	// 	user: 'Ruchita Shah',
+	// 	password: '2906',
+	// 	secure: true, // Set to true if using FTPS
 	// }
 	ftpConfig: {
 		host: 'demo.wftpserver.com',
