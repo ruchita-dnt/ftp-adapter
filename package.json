@@ -1,7 +1,7 @@
 {
 	"name": "ftp-adapter-demo",
 	"version": "1.1.0",
-	"description": "FTP Adapter Demo",
+	"description": "SFTP Adapter Demo",
 	"main": "src/app.ts",
 	"scripts": {
 		"build": "tsc",
@@ -17,7 +17,6 @@
 	"dependencies": {
 		"@google-cloud/storage": "^6.9.5",
 		"@types/node": "^10.17.4",
-		"basic-ftp": "^5.0.2",
 		"bcryptjs": "^2.4.3",
 		"body-parser": "^1.18.2",
 		"cors": "^2.8.4",
@@ -31,6 +30,7 @@
 		"nodemon": "^2.0.22",
 		"path": "^0.12.7",
 		"reflect-metadata": "^0.1.13",
+		"ssh2-sftp-client": "^4.0.2",
 		"typedi": "^0.8.0",
 		"winston": "^3.8.2"
 	},

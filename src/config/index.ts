@@ -40,18 +40,18 @@ export default {
 		prefix: '/',
 	},
 
-	// ftpConfig: {
-	// 	host: '192.168.1.53',
-	// 	port: 21,
-	// 	user: 'Ruchita Shah',
-	// 	password: '2906',
-	// 	secure: true, // Set to true if using FTPS
-	// }
 	ftpConfig: {
-		host: 'demo.wftpserver.com',
-		port: 21,
-		user: 'demo',
-		password: 'demo',
-		secure: false, // Set to true if using FTPS
+		host: 'dnt.files.com',
+		port: 22,
+		user: 'ruchita.shah@dntinfotech.com',
+		password: 'Rns@19972906',
+		secure: true, // Set to true if using FTPS
 	}
+	// ftpConfig: {
+	// 	host: 'demo.wftpserver.com',
+	// 	port: 21,
+	// 	user: 'demo',
+	// 	password: 'demo',
+	// 	secure: false, // Set to true if using FTPS
+	// }
 };
