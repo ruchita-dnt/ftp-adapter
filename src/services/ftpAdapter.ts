@@ -13,8 +13,8 @@ const storage = new Storage({
 	keyFilename: 'google-cloud-key.json'
 });
 
-const bucketName = 'ftp_downloaded_data'
-const Bucket = storage.bucket(bucketName);
+// const bucketName = 'ftp_downloaded_data'
+// const Bucket = storage.bucket(bucketName);
 
 
 export class FtpAdapter
@@ -35,13 +35,14 @@ export class FtpAdapter
 
 	async disconnect(): Promise<void>
 	{
-		await this.client.close();
+		console.log("in diconnect call~~~~");
+		await this.client.end();
 	}
 
-	async downloadFile(ftpServerPath: string, destinationPath: string, moveDirectoryPath: string, fileExtension: string): Promise<void>
+	async downloadFile(ftpServerPath: string, destinationPath: string, bucketName: string, fileExtension: string): Promise<void>
 	{
-		console.log("in download file adapter", ftpServerPath, destinationPath, moveDirectoryPath, fileExtension);
-		// const res = await this.client.downloadTo(localFilePath, remoteFilePath);
+		console.log("in download file adapter", ftpServerPath, destinationPath, bucketName, fileExtension);
+		const Bucket = storage.bucket(bucketName);
 		// const rename = await this.client.rename(remoteFilePath, newPath);
 		//list all files in directory, download from that directory and store it into destination directory
 		const listAllFiles = await this.client.list(ftpServerPath);
@@ -78,6 +79,7 @@ export class FtpAdapter
 				// await this.client.rename(`${ftpServerPath}${listAllFiles[i].name}`, `${moveDirectoryPath}${listAllFiles[i].name.split('.')[0]}_processed.${extension}`);
 			}
 		}
+		this.disconnect();
 	}
 
 	async uploadFile(localFilePath: string, remoteFilePath: string): Promise<void>

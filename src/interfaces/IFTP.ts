@@ -7,7 +7,7 @@ export class IFTP
 	{
 		return await new Promise(async (resolve, reject) =>
 		{
-			console.log("filename in interface~~~~", data.ftpServerPath, data.destinationPath, data.moveDirectoryPath, data.fileExtension);
+			console.log("filename in interface~~~~", data.ftpServerPath, data.destinationPath, data.bucketName, data.fileExtension);
 			const serviceFTP = await Container.get(ftpCaller);
 			await serviceFTP.ftpCall(data).then((res: any) =>
 			{
